@@ -1,0 +1,17 @@
+<launch>
+
+    <node pkg="fast_ndt_slam" type="ScanLineRun" name="ScanLineRun" output="screen">
+        <param name="horizonResolution" value="0.15"/>
+        <param name="scanNumber" value="32"/>
+        <param name="verticalResolution" value="1.25"/>
+        <param name="cloud_points" value="/velodyne_points"/>
+        <param name="sensorHeight" value="1.5"/>
+        <param name="distGroundThresh" value="0.3"/>
+        <param name="initSeedNumber" value="300"/>
+        <param name="groundFitIter" value="20"/>
+        <param name="rowDistThresh" value="0.5"/>
+        <param name="colDistThresh" value="0.5"/>
+        <param name="minClusterSize" value="20"/>
+        <param name="maxClusterSize" value="20000"/>
+    </node>
+</launch>

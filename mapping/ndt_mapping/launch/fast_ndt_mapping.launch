@@ -1,0 +1,19 @@
+<launch>
+    <arg name="init_x" default="0"/>
+    <arg name="init_y" default="0"/>
+    <arg name="init_z" default="0"/>
+    <arg name="init_roll" default="0.0"/>
+    <arg name="init_pitch" default="0.0"/>
+    <arg name="init_yaw" default="0.0"/>
+
+    <param name="tf_x" value="$(arg init_x)"/>
+    <param name="tf_y" value="$(arg init_y)"/>
+    <param name="tf_z" value="$(arg init_z)"/>
+    <param name="tf_roll" value="$(arg init_roll)"/>
+    <param name="tf_pitch" value="$(arg init_pitch)"/>
+    <param name="tf_yaw" value="$(arg init_yaw)"/>
+
+    <node pkg="ndt_mapping" type="fast_ndt_slam_node" name="fast_ndt_slam_node" output="screen">
+        <remap from="/velodyne_points" to="/PointCloud2" />
+    </node>
+</launch>
